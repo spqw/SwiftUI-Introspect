@@ -1,18 +1,18 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.7
 
 import PackageDescription
 
 let package = Package(
-    name: "Introspect",
+    name: "swiftui-introspect",
     platforms: [
         .iOS(.v13),
         .macOS(.v10_15),
         .tvOS(.v13),
     ],
     products: [
-        .library(name: "Introspect", targets: ["Introspect"]),
-        .library(name: "Introspect-Static", type: .static, targets: ["Introspect"]),
-        .library(name: "Introspect-Dynamic", type: .dynamic, targets: ["Introspect"]),
+        .library(name: "SwiftUIIntrospect", targets: ["SwiftUIIntrospect"]),
+        .library(name: "SwiftUIIntrospect-Static", type: .static, targets: ["SwiftUIIntrospect"]),
+        .library(name: "SwiftUIIntrospect-Dynamic", type: .dynamic, targets: ["SwiftUIIntrospect"]),
     ],
     targets: [
         .target(
@@ -23,6 +23,11 @@ let package = Package(
             name: "IntrospectTests",
             dependencies: ["Introspect"],
             path: "IntrospectTests"
+        ),
+
+        .target(
+            name: "SwiftUIIntrospect",
+            path: "Sources"
         ),
     ]
 )
